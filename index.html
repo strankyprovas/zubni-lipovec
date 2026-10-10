@@ -41,6 +41,58 @@
   .btn.ghost:hover{background:var(--mint2);transform:none}
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
   .reveal.in{opacity:1;transform:none}
+
+  /* ───── šmrnc: plovoucí tvary, ticker, podtržení ───── */
+  .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;pointer-events:none;animation:plav 14s ease-in-out infinite alternate}
+  .blob.b1{width:420px;height:420px;background:#bfe8dd;left:-140px;top:10%}
+  .blob.b2{width:340px;height:340px;background:#f3ddb9;right:-110px;bottom:-60px;animation-delay:-7s}
+  @keyframes plav{from{transform:translate(0,0) scale(1)}to{transform:translate(26px,-30px) scale(1.08)}}
+  @media(prefers-reduced-motion:reduce){.blob,.chip,.okno-mini{animation:none!important}}
+  .tah{position:relative;white-space:nowrap}
+  .tah svg{position:absolute;left:0;bottom:-6px;width:100%;height:14px;overflow:visible}
+  .tah path{fill:none;stroke:var(--pisek);stroke-width:5;stroke-linecap:round;stroke-dasharray:320;stroke-dashoffset:320;animation:tahni 1s var(--ease) .7s forwards}
+  @keyframes tahni{to{stroke-dashoffset:0}}
+  .ticker{background:var(--ink);color:#dff0ea;padding:14px 0;overflow:hidden}
+  .ticker-track{display:flex;width:max-content;animation:tick 30s linear infinite}
+  .ticker span{display:flex;align-items:center;gap:22px;padding-right:22px;font-family:var(--disp);font-weight:500;font-size:.95rem;white-space:nowrap}
+  .ticker i{font-style:normal;color:var(--pisek)}
+  @keyframes tick{to{transform:translateX(-50%)}}
+  /* hero kompozice bez fotky */
+  .hkomp{position:relative;min-height:440px}
+  .okno-mini{position:relative;background:#fff;border-radius:24px;padding:26px;box-shadow:0 34px 70px -34px rgba(14,110,99,.4);border:1px solid var(--mint2);animation:vznaset 7s ease-in-out infinite alternate}
+  @keyframes vznaset{from{transform:translateY(0) rotate(-.6deg)}to{transform:translateY(-14px) rotate(.4deg)}}
+  .okno-mini .om-h{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--linka);margin-bottom:14px}
+  .okno-mini .om-h .ik{width:42px;height:42px;border-radius:13px;background:var(--mint);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+  .okno-mini .om-h b{font-family:var(--disp)}
+  .okno-mini .om-h span{display:block;font-size:.78rem;color:var(--sed)}
+  .om-dny{display:flex;gap:6px;margin-bottom:10px}
+  .om-dny i{font-style:normal;font-size:.76rem;font-weight:600;font-family:var(--disp);padding:6px 12px;border-radius:999px;background:var(--mint);color:var(--tyrkys)}
+  .om-dny i.on{background:var(--tyrkys);color:#fff}
+  .om-sloty{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+  .om-sloty i{font-style:normal;font-size:.8rem;text-align:center;padding:8px 2px;border-radius:10px;border:1.4px solid var(--linka)}
+  .om-sloty i.on{background:var(--pisek);border-color:var(--pisek);color:#fff;font-weight:600}
+  .om-pot{margin-top:12px;font-size:.78rem;background:var(--mint);border-radius:10px;padding:9px 12px}
+  .om-pot b{color:var(--tyrkys)}
+  .chip{position:absolute;background:#fff;border-radius:999px;padding:10px 18px;font-size:.82rem;font-weight:600;font-family:var(--disp);box-shadow:0 16px 36px -18px rgba(18,43,38,.35);display:flex;gap:8px;align-items:center;animation:vznaset 6s ease-in-out infinite alternate}
+  .chip.c1{top:-16px;right:8%;animation-delay:-2s}
+  .chip.c2{bottom:10%;left:-20px;animation-delay:-4s}
+  .chip.c3{bottom:-18px;right:14%;animation-delay:-1s}
+  /* about panel misto fotky */
+  .apanel{position:relative;background:linear-gradient(160deg,var(--mint) 0%,var(--mint2) 100%);border-radius:26px;padding:clamp(28px,4vw,44px);overflow:hidden}
+  .apanel::before{content:"";position:absolute;right:-50px;top:-50px;width:190px;height:190px;border-radius:50%;background:rgba(14,110,99,.08)}
+  .apanel .usmev{width:min(220px,60%);margin:0 auto 10px;display:block}
+  .usmev path{fill:none;stroke:var(--tyrkys);stroke-width:7;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420}
+  .apanel.in .usmev path{animation:tahni 1.3s var(--ease) .3s forwards}
+  .usmev circle{fill:var(--pisek);opacity:0}
+  .apanel.in .usmev circle{animation:tecka .5s var(--ease) 1.5s forwards}
+  @keyframes tecka{to{opacity:1}}
+  .acheck{display:flex;flex-direction:column;gap:12px;margin-top:18px}
+  .acheck div{display:flex;gap:11px;align-items:flex-start;background:#fff;border-radius:14px;padding:13px 16px;font-size:.92rem;font-weight:500;box-shadow:0 10px 26px -18px rgba(18,43,38,.3)}
+  .acheck i{font-style:normal;color:var(--tyrkys);font-weight:700}
+  /* sluzby cislovani + sipka */
+  .sk{position:relative}
+  .sk .num{position:absolute;top:22px;right:22px;font-family:var(--disp);font-size:.78rem;font-weight:600;color:#b9cfc9;transition:.3s}
+  .sk:hover .num{color:var(--pisek)}
   /* header */
   header{position:fixed;inset:0 0 auto 0;z-index:100;padding:18px 0;transition:.35s var(--ease)}
   header.on{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);padding:11px 0;box-shadow:0 1px 0 var(--linka)}
@@ -185,23 +237,38 @@
 </header>
 
 <section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div>
   <div class="wrap hgrid">
     <div>
       <span class="badge">Přijímáme nové pacienty</span>
       <p class="eyebrow">Lipovec · Moravský kras</p>
-      <h1>Zubní péče pro celou rodinu, <em>kousek od vás</em></h1>
+      <h1>Zubní péče pro celou rodinu, <em class="tah">kousek od vás<svg viewBox="0 0 320 14" preserveAspectRatio="none" aria-hidden="true"><path d="M4 10 C 80 2, 240 2, 316 8"/></svg></em></h1>
       <p class="lead">Nová moderní ordinace přímo v Lipovci. Komplexní stomatologická péče s důrazem na prevenci — protože nejlepší je ošetření, které nikdy nebude potřeba.</p>
       <div class="hcta">
         <a href="#objednani" class="btn sand">Objednat vstupní vyšetření</a>
         <a href="#sluzby" class="btn ghost">Co ošetřujeme</a>
       </div>
     </div>
-    <div class="hfoto">
-      <div class="ram"><img src="photos/photo_2.jpg" alt="Zubní lékařka při ošetření pacienta"></div>
-      <div class="hkarta"><div class="ik">🗓️</div><div><b>Objednání online</b><span>vstupní vyšetření · 30 minut</span></div></div>
+    <div class="hkomp">
+      <div class="okno-mini" aria-hidden="true">
+        <div class="om-h"><div class="ik">🗓️</div><div><b>Vstupní vyšetření</b><span>30 minut · Lipovec 282</span></div></div>
+        <div class="om-dny"><i class="on">Po</i><i>Út</i><i>Čt</i></div>
+        <div class="om-sloty"><i>8:00</i><i>8:30</i><i class="on">9:00</i><i>9:30</i><i>10:00</i><i>10:30</i></div>
+        <div class="om-pot">✅ <b>Pondělí 9:00</b> — rezervace potvrzena</div>
+      </div>
+      <div class="chip c1">🦷 Prevence především</div>
+      <div class="chip c2">👨‍👩‍👧 Pro celou rodinu</div>
+      <div class="chip c3">📍 Lipovec · Moravský kras</div>
     </div>
   </div>
 </section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Preventivní prohlídky <i>✦</i> Dentální hygiena <i>✦</i> Záchovná stomatologie <i>✦</i> Endodoncie <i>✦</i> Protetika <i>✦</i> Dětská stomatologie <i>✦</i></span>
+    <span>Preventivní prohlídky <i>✦</i> Dentální hygiena <i>✦</i> Záchovná stomatologie <i>✦</i> Endodoncie <i>✦</i> Protetika <i>✦</i> Dětská stomatologie <i>✦</i></span>
+  </div>
+</div>
 
 <div class="vyhody">
   <div class="wrap vgrid">
@@ -214,8 +281,16 @@
 
 <section id="o-nas">
   <div class="wrap about">
-    <div class="aimg reveal">
-      <div class="ram"><img src="photos/photo_5.jpg" alt="Moderní zubní ordinace" loading="lazy"></div>
+    <div class="apanel reveal">
+      <svg class="usmev" viewBox="0 0 220 110" aria-hidden="true">
+        <path d="M18 22 C 55 96, 165 96, 202 22"/>
+        <circle cx="18" cy="22" r="7"/><circle cx="202" cy="22" r="7"/>
+      </svg>
+      <div class="acheck">
+        <div><i>✓</i>Pravidelná prevence místo velkých zákroků</div>
+        <div><i>✓</i>Vše v klidu vysvětlíme — žádné odborné mlžení</div>
+        <div><i>✓</i>Šetrné postupy a moderní vybavení</div>
+      </div>
     </div>
     <div class="reveal">
       <p class="eyebrow">O ordinaci</p>
@@ -238,12 +313,12 @@
       <p class="lead">Od pravidelné prevence po kompletní ošetření — vše na jednom místě.</p>
     </div>
     <div class="sgrid">
-      <div class="sk reveal"><div class="ik">🔍</div><h3>Preventivní prohlídky</h3><p>Pravidelné kontroly 2× ročně — základ zdravého chrupu a klidu v duši.</p></div>
-      <div class="sk reveal"><div class="ik">🪥</div><h3>Dentální hygiena</h3><p>Profesionální čištění, odstranění kamene a nácvik správné péče doma.</p></div>
-      <div class="sk reveal"><div class="ik">🦷</div><h3>Záchovná stomatologie</h3><p>Estetické výplně a ošetření kazů šetrně a bezbolestně.</p></div>
-      <div class="sk reveal"><div class="ik">🔬</div><h3>Endodoncie</h3><p>Ošetření kořenových kanálků moderní technikou — záchrana zubu místo trhání.</p></div>
-      <div class="sk reveal"><div class="ik">👑</div><h3>Protetika</h3><p>Korunky, můstky a náhrady, které vrátí úsměvu funkci i vzhled.</p></div>
-      <div class="sk reveal"><div class="ik">🧸</div><h3>Dětská stomatologie</h3><p>Trpělivý a hravý přístup, aby si děti na zubaře zvykly beze strachu.</p></div>
+      <div class="sk reveal"><div class="ik">🔍</div><span class="num">01</span><h3>Preventivní prohlídky</h3><p>Pravidelné kontroly 2× ročně — základ zdravého chrupu a klidu v duši.</p></div>
+      <div class="sk reveal"><div class="ik">🪥</div><span class="num">02</span><h3>Dentální hygiena</h3><p>Profesionální čištění, odstranění kamene a nácvik správné péče doma.</p></div>
+      <div class="sk reveal"><div class="ik">🦷</div><span class="num">03</span><h3>Záchovná stomatologie</h3><p>Estetické výplně a ošetření kazů šetrně a bezbolestně.</p></div>
+      <div class="sk reveal"><div class="ik">🔬</div><span class="num">04</span><h3>Endodoncie</h3><p>Ošetření kořenových kanálků moderní technikou — záchrana zubu místo trhání.</p></div>
+      <div class="sk reveal"><div class="ik">👑</div><span class="num">05</span><h3>Protetika</h3><p>Korunky, můstky a náhrady, které vrátí úsměvu funkci i vzhled.</p></div>
+      <div class="sk reveal"><div class="ik">🧸</div><span class="num">06</span><h3>Dětská stomatologie</h3><p>Trpělivý a hravý přístup, aby si děti na zubaře zvykly beze strachu.</p></div>
     </div>
   </div>
 </section>
