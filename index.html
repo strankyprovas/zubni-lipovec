@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zubní ordinace Lipovec — MDDr. Radka Střídecká | Zubař pro celou rodinu</title>
+<meta name="description" content="Nová zubní ordinace v Lipovci u Moravského krasu. Komplexní stomatologická péče pro celou rodinu s důrazem na prevenci. Přijímáme nové pacienty — objednejte se online na vstupní vyšetření.">
+<link rel="canonical" href="https://strankyprovas.github.io/zubni-lipovec/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Dentist","name":"Zubní ordinace Lipovec","description":"Komplexní stomatologická péče pro celou rodinu s důrazem na prevenci.","address":{"@type":"PostalAddress","streetAddress":"Lipovec 282","addressLocality":"Lipovec","postalCode":"679 15","addressCountry":"CZ"},"founder":{"@type":"Person","name":"MDDr. Radka Střídecká"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Thursday"],"opens":"08:00","closes":"15:00"}]}
+</script>
+<style>
+  :root{
+    --tyrkys:#0e6e63; --tyrkys-tm:#0a4f47; --mint:#f1f9f6; --mint2:#e2f1ec;
+    --ink:#122b26; --sed:#5b7570; --pisek:#d9a053; --pisek-tm:#c08737;
+    --bila:#ffffff; --linka:rgba(18,43,38,.1);
+    --disp:'Sora',system-ui,sans-serif; --body:'Figtree',system-ui,sans-serif;
+    --ease:cubic-bezier(.22,.61,.36,1); --r:16px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);background:var(--bila);color:var(--ink);line-height:1.7;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--disp);line-height:1.12;color:var(--ink)}
+  h1{font-size:clamp(2.2rem,5.4vw,3.6rem);font-weight:700;letter-spacing:-.02em}
+  h2{font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:600;letter-spacing:-.015em}
+  h3{font-size:1.15rem;font-weight:600}
+  .wrap{width:min(100% - 44px,1160px);margin-inline:auto}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--tyrkys);margin-bottom:14px}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--pisek);border-radius:2px}
+  .lead{font-size:clamp(1rem,1.5vw,1.12rem);color:var(--sed);max-width:58ch}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--disp);font-size:.92rem;font-weight:600;padding:15px 30px;border-radius:999px;background:var(--tyrkys);color:#fff;border:2px solid var(--tyrkys);cursor:pointer;transition:.28s var(--ease)}
+  .btn:hover{background:var(--tyrkys-tm);border-color:var(--tyrkys-tm);transform:translateY(-2px)}
+  .btn.sand{background:var(--pisek);border-color:var(--pisek);color:#fff}
+  .btn.sand:hover{background:var(--pisek-tm);border-color:var(--pisek-tm)}
+  .btn.ghost{background:transparent;color:var(--tyrkys)}
+  .btn.ghost:hover{background:var(--mint2);transform:none}
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  /* header */
+  header{position:fixed;inset:0 0 auto 0;z-index:100;padding:18px 0;transition:.35s var(--ease)}
+  header.on{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);padding:11px 0;box-shadow:0 1px 0 var(--linka)}
+  .hin{display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--disp);font-weight:700;font-size:1.08rem;line-height:1.15}
+  .brand .zn{width:42px;height:42px;border-radius:13px;background:var(--tyrkys);color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 42px}
+  .brand small{display:block;font-family:var(--body);font-weight:500;font-size:.68rem;color:var(--sed);letter-spacing:.06em}
+  .nav{display:flex;align-items:center;gap:clamp(14px,2.4vw,28px)}
+  .nav a:not(.btn){font-size:.9rem;font-weight:500;color:var(--ink);transition:color .2s}
+  .nav a:not(.btn):hover{color:var(--tyrkys)}
+  .nav .btn{padding:11px 22px;font-size:.84rem}
+  .men{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+  .men span{width:24px;height:2px;background:var(--ink);border-radius:2px}
+  /* hero */
+  .hero{position:relative;padding:clamp(120px,16vh,170px) 0 clamp(50px,7vw,90px);background:linear-gradient(180deg,var(--mint) 0%,#fff 100%);overflow:hidden}
+  .hero::before{content:"";position:absolute;right:-180px;top:-180px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,var(--mint2),transparent 70%)}
+  .hgrid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,64px);align-items:center}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;padding:8px 16px;border-radius:999px;background:#fff;color:var(--tyrkys);box-shadow:0 8px 24px -12px rgba(14,110,99,.35);margin-bottom:20px}
+  .badge::before{content:"";width:8px;height:8px;border-radius:50%;background:#2fa36b;animation:pulz 1.8s infinite}
+  @keyframes pulz{0%,100%{box-shadow:0 0 0 0 rgba(47,163,107,.45)}50%{box-shadow:0 0 0 6px rgba(47,163,107,0)}}
+  .hero h1 em{font-style:normal;color:var(--tyrkys)}
+  .hero .lead{margin:18px 0 28px}
+  .hcta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hnote{font-size:.84rem;color:var(--sed)}
+  .hfoto{position:relative}
+  .hfoto .ram{border-radius:26px;overflow:hidden;aspect-ratio:4/4.6;box-shadow:0 36px 70px -34px rgba(14,110,99,.45)}
+  .hfoto img{width:100%;height:100%;object-fit:cover}
+  .hkarta{position:absolute;left:-26px;bottom:26px;background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 20px 44px -18px rgba(18,43,38,.3);display:flex;gap:12px;align-items:center}
+  .hkarta .ik{width:40px;height:40px;border-radius:12px;background:var(--mint2);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+  .hkarta b{font-family:var(--disp);font-size:.92rem;display:block}
+  .hkarta span{font-size:.78rem;color:var(--sed)}
+  /* pás výhod */
+  .vyhody{border-block:1px solid var(--linka);background:#fff}
+  .vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:26px 0}
+  .vyh{display:flex;gap:12px;align-items:center;font-size:.92rem;font-weight:500}
+  .vyh .ik{width:44px;height:44px;border-radius:14px;background:var(--mint);display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex:0 0 44px}
+  /* sekce */
+  section{padding:clamp(64px,9vw,110px) 0}
+  /* o nás */
+  .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,70px);align-items:center}
+  .aimg{position:relative}
+  .aimg .ram{border-radius:26px;overflow:hidden;aspect-ratio:4/4.8;box-shadow:0 30px 60px -30px rgba(18,43,38,.35)}
+  .aimg img{width:100%;height:100%;object-fit:cover}
+  .aimg::after{content:"";position:absolute;inset:auto -16px -16px 40%;height:60%;border-radius:22px;border:2px solid var(--mint2);z-index:-1}
+  .about p{margin-top:16px;color:var(--sed)}
+  .apodpis{margin-top:22px;display:flex;align-items:center;gap:14px}
+  .apodpis .zn{width:52px;height:52px;border-radius:50%;background:var(--tyrkys);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700}
+  .apodpis b{font-family:var(--disp);display:block}
+  .apodpis span{font-size:.84rem;color:var(--sed)}
+  /* služby */
+  .sluzby{background:var(--mint)}
+  .shead{text-align:center;max-width:640px;margin:0 auto clamp(36px,5vw,56px)}
+  .shead .lead{margin:12px auto 0}
+  .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .sk{background:#fff;border-radius:var(--r);padding:28px 26px;box-shadow:0 14px 34px -24px rgba(18,43,38,.25);transition:.3s var(--ease);border:1px solid transparent}
+  .sk:hover{transform:translateY(-5px);border-color:var(--mint2);box-shadow:0 22px 44px -24px rgba(14,110,99,.3)}
+  .sk .ik{width:52px;height:52px;border-radius:16px;background:var(--mint);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:16px}
+  .sk p{font-size:.92rem;color:var(--sed);margin-top:8px}
+  /* objednání */
+  .objed{position:relative}
+  .ogrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:start}
+  .okarta{background:var(--ink);color:#fff;border-radius:22px;padding:clamp(26px,3.4vw,40px);position:relative;overflow:hidden}
+  .okarta::before{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;background:rgba(14,110,99,.35)}
+  .okarta h3{color:#fff;font-size:1.4rem}
+  .okarta .tagx{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--pisek);margin-bottom:12px}
+  .okarta .delka{display:flex;gap:18px;margin:18px 0 6px;font-size:.9rem;color:rgba(255,255,255,.75)}
+  .okarta .delka b{color:#fff;font-family:var(--disp)}
+  .okarta p.pozn{font-size:.86rem;color:rgba(255,255,255,.62);margin-top:14px}
+  .sloty{background:#fff;border:1px solid var(--linka);border-radius:22px;padding:clamp(22px,3vw,32px);box-shadow:0 22px 50px -30px rgba(18,43,38,.3)}
+  .sloty .dny{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+  .sloty .den{font-family:var(--disp);font-size:.85rem;font-weight:600;padding:9px 16px;border-radius:999px;border:1.5px solid var(--linka);cursor:pointer;transition:.2s;background:#fff}
+  .sloty .den.on{background:var(--tyrkys);border-color:var(--tyrkys);color:#fff}
+  .casy{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .cas{font-size:.88rem;font-weight:500;text-align:center;padding:10px 4px;border-radius:12px;border:1.5px solid var(--linka);cursor:pointer;transition:.18s;background:#fff}
+  .cas:hover{border-color:var(--tyrkys);color:var(--tyrkys)}
+  .cas.on{background:var(--pisek);border-color:var(--pisek);color:#fff}
+  .sloty .pot{margin-top:16px;padding:13px 16px;border-radius:12px;background:var(--mint);font-size:.88rem;display:none}
+  .sloty .pot.on{display:block}
+  .sloty .pot b{color:var(--tyrkys)}
+  .sloty .demo-pozn{margin-top:12px;font-size:.76rem;color:var(--sed)}
+  /* hodiny */
+  .hodiny{background:var(--mint)}
+  .hgrid2{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4vw,56px);align-items:start}
+  .tab{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:0 16px 40px -28px rgba(18,43,38,.3)}
+  .tab .radek{display:flex;justify-content:space-between;align-items:center;padding:15px 22px;border-bottom:1px solid var(--linka);font-size:.95rem}
+  .tab .radek:last-child{border-bottom:0}
+  .tab .radek b{font-family:var(--disp);font-weight:600}
+  .tab .radek.ted{background:var(--mint)}
+  .tab .zav{color:var(--sed)}
+  .akut{background:#fff;border-radius:var(--r);padding:26px;border:1.5px solid var(--pisek);box-shadow:0 16px 40px -28px rgba(217,160,83,.4)}
+  .akut h3{display:flex;align-items:center;gap:10px}
+  .akut p{font-size:.92rem;color:var(--sed);margin-top:10px}
+  /* kontakt */
+  .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:start}
+  .crow{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--linka)}
+  .crow:last-of-type{border-bottom:0}
+  .crow .ik{width:44px;height:44px;border-radius:14px;background:var(--mint);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex:0 0 44px}
+  .crow b{font-family:var(--disp);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:2px}
+  .crow span{color:var(--sed);font-size:.95rem}
+  .cmap{border-radius:22px;overflow:hidden;min-height:400px;box-shadow:0 24px 50px -30px rgba(18,43,38,.35)}
+  .cmap iframe{width:100%;height:100%;min-height:400px;border:0;display:block}
+  /* cta + footer */
+  .cta{background:linear-gradient(135deg,var(--tyrkys) 0%,var(--tyrkys-tm) 100%);color:#fff;text-align:center;border-radius:28px;padding:clamp(40px,6vw,70px) 24px;margin-inline:22px}
+  .cta h2{color:#fff}
+  .cta p{color:rgba(255,255,255,.85);max-width:52ch;margin:14px auto 28px}
+  .cta .btn{background:#fff;border-color:#fff;color:var(--tyrkys)}
+  .cta .btn:hover{background:var(--mint)}
+  footer{padding:44px 0 36px;text-align:center;color:var(--sed);font-size:.88rem}
+  footer b{font-family:var(--disp);color:var(--ink)}
+  footer .demo{margin-top:10px;font-size:.74rem;color:#9ab3ad}
+  @media(max-width:900px){
+    .hgrid,.about,.ogrid,.hgrid2,.cgrid{grid-template-columns:1fr}
+    .hfoto{max-width:460px}.hkarta{left:12px}
+    .vgrid{grid-template-columns:1fr 1fr;gap:14px}
+    .sgrid{grid-template-columns:1fr 1fr}
+    .aimg{max-width:420px;order:-1}
+    .nav a:not(.men){display:none}.men{display:flex}
+    .nav.open{position:fixed;inset:0;background:#fff;flex-direction:column;justify-content:center;gap:26px}
+    .nav.open a:not(.men){display:block;font-size:1.3rem;font-family:var(--disp)}
+    .nav.open .men{position:absolute;top:22px;right:22px}
+  }
+  @media(max-width:560px){.sgrid{grid-template-columns:1fr}.vgrid{grid-template-columns:1fr}.casy{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap hin">
+    <a href="#" class="brand">
+      <span class="zn">🦷</span>
+      <span>Zubní ordinace Lipovec<small>MDDr. Radka Střídecká</small></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#sluzby">Služby</a>
+      <a href="#objednani">Objednání</a>
+      <a href="#hodiny">Ordinační hodiny</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="#objednani" class="btn">Objednat se</a>
+      <button class="men" id="men" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hgrid">
+    <div>
+      <span class="badge">Přijímáme nové pacienty</span>
+      <p class="eyebrow">Lipovec · Moravský kras</p>
+      <h1>Zubní péče pro celou rodinu, <em>kousek od vás</em></h1>
+      <p class="lead">Nová moderní ordinace přímo v Lipovci. Komplexní stomatologická péče s důrazem na prevenci — protože nejlepší je ošetření, které nikdy nebude potřeba.</p>
+      <div class="hcta">
+        <a href="#objednani" class="btn sand">Objednat vstupní vyšetření</a>
+        <a href="#sluzby" class="btn ghost">Co ošetřujeme</a>
+      </div>
+    </div>
+    <div class="hfoto">
+      <div class="ram"><img src="photos/photo_2.jpg" alt="Zubní lékařka při ošetření pacienta"></div>
+      <div class="hkarta"><div class="ik">🗓️</div><div><b>Objednání online</b><span>vstupní vyšetření · 30 minut</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="vyhody">
+  <div class="wrap vgrid">
+    <div class="vyh"><span class="ik">🛡️</span>Důraz na prevenci</div>
+    <div class="vyh"><span class="ik">👨‍👩‍👧</span>Péče pro celou rodinu</div>
+    <div class="vyh"><span class="ik">✨</span>Nová moderní ordinace</div>
+    <div class="vyh"><span class="ik">📅</span>Objednání online</div>
+  </div>
+</div>
+
+<section id="o-nas">
+  <div class="wrap about">
+    <div class="aimg reveal">
+      <div class="ram"><img src="photos/photo_5.jpg" alt="Moderní zubní ordinace" loading="lazy"></div>
+    </div>
+    <div class="reveal">
+      <p class="eyebrow">O ordinaci</p>
+      <h2>Zubař, ke kterému se nebudete bát chodit</h2>
+      <p>Věříme, že návštěva zubaře nemusí být strašák. Základem naší péče je prevence — pravidelné prohlídky a dentální hygiena, díky kterým se velkým zákrokům většinou úplně vyhnete.</p>
+      <p>Ošetřujeme děti i dospělé, vše v klidu vysvětlíme a nikdy neděláme nic, čemu byste nerozuměli. Moderní vybavení a šetrné postupy jsou u nás samozřejmost.</p>
+      <div class="apodpis">
+        <div class="zn">RS</div>
+        <div><b>MDDr. Radka Střídecká</b><span>zubní lékařka</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sluzby" class="sluzby">
+  <div class="wrap">
+    <div class="shead reveal">
+      <p class="eyebrow" style="justify-content:center">Naše služby</p>
+      <h2>Komplexní péče o váš úsměv</h2>
+      <p class="lead">Od pravidelné prevence po kompletní ošetření — vše na jednom místě.</p>
+    </div>
+    <div class="sgrid">
+      <div class="sk reveal"><div class="ik">🔍</div><h3>Preventivní prohlídky</h3><p>Pravidelné kontroly 2× ročně — základ zdravého chrupu a klidu v duši.</p></div>
+      <div class="sk reveal"><div class="ik">🪥</div><h3>Dentální hygiena</h3><p>Profesionální čištění, odstranění kamene a nácvik správné péče doma.</p></div>
+      <div class="sk reveal"><div class="ik">🦷</div><h3>Záchovná stomatologie</h3><p>Estetické výplně a ošetření kazů šetrně a bezbolestně.</p></div>
+      <div class="sk reveal"><div class="ik">🔬</div><h3>Endodoncie</h3><p>Ošetření kořenových kanálků moderní technikou — záchrana zubu místo trhání.</p></div>
+      <div class="sk reveal"><div class="ik">👑</div><h3>Protetika</h3><p>Korunky, můstky a náhrady, které vrátí úsměvu funkci i vzhled.</p></div>
+      <div class="sk reveal"><div class="ik">🧸</div><h3>Dětská stomatologie</h3><p>Trpělivý a hravý přístup, aby si děti na zubaře zvykly beze strachu.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="objednani" class="objed">
+  <div class="wrap">
+    <div class="shead reveal" style="text-align:center;max-width:640px;margin:0 auto clamp(36px,5vw,56px)">
+      <p class="eyebrow" style="justify-content:center">Objednání online</p>
+      <h2>Rezervujte si vstupní vyšetření</h2>
+      <p class="lead">Vyberte si termín, který vám sedí — bez telefonování a čekání.</p>
+    </div>
+    <div class="ogrid">
+      <div class="okarta reveal">
+        <span class="tagx">Pro nové pacienty</span>
+        <h3>Vstupní vyšetření</h3>
+        <div class="delka"><span>⏱ <b>30 minut</b></span><span>📍 Lipovec 282</span></div>
+        <p style="color:rgba(255,255,255,.8);margin-top:12px">Seznámíme se, kompletně vyšetříme chrup, zhodnotíme snímky a domluvíme plán péče šitý na míru. Ideální první krok — pro vás i celou rodinu.</p>
+        <p class="pozn">Navazující ošetření už s vámi plánujeme individuálně přímo v ordinaci.</p>
+      </div>
+      <div class="sloty reveal">
+        <div class="dny" id="dny">
+          <button class="den on" data-d="Pondělí">Pondělí</button>
+          <button class="den" data-d="Úterý">Úterý</button>
+          <button class="den" data-d="Čtvrtek">Čtvrtek</button>
+        </div>
+        <div class="casy" id="casy"></div>
+        <div class="pot" id="pot"></div>
+        <p class="demo-pozn">Ukázková verze — v ostré verzi zde rezervaci rovnou dokončíte a přijde vám potvrzení e-mailem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hodiny" class="hodiny">
+  <div class="wrap">
+    <div class="shead reveal" style="text-align:left;margin:0 0 36px;max-width:none">
+      <p class="eyebrow">Ordinační hodiny</p>
+      <h2>Kdy nás najdete</h2>
+    </div>
+    <div class="hgrid2">
+      <div class="tab reveal" id="tabhod">
+        <div class="radek" data-den="1"><b>Pondělí</b><span>8:00 – 11:30 · 12:00 – 15:00</span></div>
+        <div class="radek" data-den="2"><b>Úterý</b><span>8:00 – 11:30 · 12:00 – 15:00</span></div>
+        <div class="radek" data-den="3"><b>Středa</b><span class="zav">zavřeno</span></div>
+        <div class="radek" data-den="4"><b>Čtvrtek</b><span>8:00 – 11:30 · 12:00 – 15:00</span></div>
+        <div class="radek" data-den="5"><b>Pátek</b><span class="zav">zavřeno</span></div>
+      </div>
+      <div class="akut reveal">
+        <h3>🚨 Akutní bolest?</h3>
+        <p>Ozvěte se nám co nejdříve — akutní případy se snažíme ošetřit v den objednání v rámci ordinačních hodin.</p>
+        <p style="margin-top:14px"><b style="font-family:var(--disp)">Telefon do ordinace doplníme před spuštěním.</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap">
+    <div class="shead reveal" style="text-align:left;margin:0 0 36px;max-width:none">
+      <p class="eyebrow">Kontakt</p>
+      <h2>Kde nás najdete</h2>
+    </div>
+    <div class="cgrid">
+      <div class="reveal">
+        <div class="crow"><div class="ik">📍</div><div><b>Adresa</b><span>Lipovec 282, 679 15 Lipovec<br>okres Blansko · Moravský kras</span></div></div>
+        <div class="crow"><div class="ik">🗓️</div><div><b>Objednání</b><span>online zde na webu, nebo osobně v ordinaci</span></div></div>
+        <div class="crow"><div class="ik">🚗</div><div><b>Parkování</b><span>přímo u ordinace</span></div></div>
+        <div class="crow"><div class="ik">✉️</div><div><b>E-mail</b><span>doplníme před spuštěním webu</span></div></div>
+      </div>
+      <div class="cmap reveal">
+        <iframe src="https://maps.google.com/maps?q=Lipovec%20282%2C%20679%2015&z=14&output=embed" loading="lazy" title="Mapa — Zubní ordinace Lipovec"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="cta reveal">
+    <h2>Hledáte zubaře pro celou rodinu?</h2>
+    <p>Přijímáme nové pacienty z Lipovce a okolí. Objednejte se na vstupní vyšetření — zabere 30 minut a je to první krok ke zdravému úsměvu bez starostí.</p>
+    <a href="#objednani" class="btn">Objednat se online</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>Zubní ordinace Lipovec</b> · MDDr. Radka Střídecká<br>
+    Lipovec 282, 679 15 · Po / Út / Čt 8:00–15:00
+    <div class="demo">Ukázka nového webu · připravily StránkyProVás.cz</div>
+  </div>
+</footer>
+
+<script>
+  const hdr=document.getElementById('hdr');
+  addEventListener('scroll',()=>hdr.classList.toggle('on',scrollY>30),{passive:true});
+  const nav=document.getElementById('nav'),men=document.getElementById('men');
+  men.addEventListener('click',()=>nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  setInterval(()=>{document.querySelectorAll('.reveal:not(.in)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<innerHeight*1.05&&r.bottom>-40)el.classList.add('in')})},900);
+  /* mock rezervace */
+  const CASY=['8:00','8:30','9:00','9:30','10:00','10:30','11:00','12:00','12:30','13:00','13:30','14:00','14:30'];
+  const casy=document.getElementById('casy'),pot=document.getElementById('pot');
+  let den='Pondělí';
+  function vykresli(){
+    casy.innerHTML='';
+    CASY.forEach((c,i)=>{
+      const b=document.createElement('button');b.className='cas';b.textContent=c;
+      if((den==='Úterý'&&(i===2||i===7))||(den==='Čtvrtek'&&i===4)||(den==='Pondělí'&&i===10)){b.style.opacity='.35';b.style.pointerEvents='none'}
+      b.addEventListener('click',()=>{
+        casy.querySelectorAll('.cas').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+        pot.classList.add('on');
+        pot.innerHTML=`✅ Vybráno: <b>${den} ${c}</b> — Vstupní vyšetření (30 min). V ostré verzi zde vyplníte jméno a telefon a rezervace je hotová.`;
+      });
+      casy.appendChild(b);
+    });
+  }
+  document.querySelectorAll('.den').forEach(d=>d.addEventListener('click',()=>{
+    document.querySelectorAll('.den').forEach(x=>x.classList.remove('on'));d.classList.add('on');
+    den=d.dataset.d;pot.classList.remove('on');vykresli();
+  }));
+  vykresli();
+  /* zvýraznění dnešního dne v hodinách */
+  const dnes=new Date().getDay();
+  document.querySelectorAll('#tabhod .radek').forEach(r=>{if(+r.dataset.den===dnes)r.classList.add('ted')});
+</script>
+<img src="https://strankyprovas.cz/track/d.php?s=zubni-lipovec" alt="" width="1" height="1" style="position:absolute;opacity:0" aria-hidden="true">
+</body>
+</html>
