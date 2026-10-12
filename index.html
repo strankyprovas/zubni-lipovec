@@ -54,21 +54,7 @@
   @keyframes tahni{to{stroke-dashoffset:0}}
   @keyframes tick{to{transform:translateX(-50%)}}
   /* hero kompozice bez fotky */
-  .hkomp{position:relative;min-height:440px}
-  .okno-mini{position:relative;background:#fff;border-radius:24px;padding:26px;box-shadow:0 34px 70px -34px rgba(104,118,59,.4);border:1px solid var(--mint2);transform:none}
   @keyframes vznaset{from{transform:translateY(0) rotate(-.6deg)}to{transform:translateY(-14px) rotate(.4deg)}}
-  .okno-mini .om-h{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--linka);margin-bottom:14px}
-  .okno-mini .om-h .ik{width:42px;height:42px;border-radius:13px;background:var(--mint);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
-  .okno-mini .om-h b{font-family:var(--disp)}
-  .okno-mini .om-h span{display:block;font-size:.78rem;color:var(--sed)}
-  .om-dny{display:flex;gap:6px;margin-bottom:10px}
-  .om-dny i{font-style:normal;font-size:.76rem;font-weight:600;font-family:var(--disp);padding:6px 12px;border-radius:999px;background:var(--mint);color:var(--tyrkys)}
-  .om-dny i.on{background:var(--tyrkys);color:#fff}
-  .om-sloty{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
-  .om-sloty i{font-style:normal;font-size:.8rem;text-align:center;padding:8px 2px;border-radius:10px;border:1.4px solid var(--linka)}
-  .om-sloty i.on{background:var(--pisek);border-color:var(--pisek);color:#fff;font-weight:600}
-  .om-pot{margin-top:12px;font-size:.78rem;background:var(--mint);border-radius:10px;padding:9px 12px}
-  .om-pot b{color:var(--tyrkys)}
   /* about panel misto fotky */
   .apanel{position:relative;background:linear-gradient(160deg,var(--mint) 0%,var(--mint2) 100%);border-radius:26px;padding:clamp(28px,4vw,44px);overflow:hidden}
   .apanel::before{content:"";position:absolute;right:-50px;top:-50px;width:190px;height:190px;border-radius:50%;background:rgba(104,118,59,.08)}
@@ -101,13 +87,13 @@
   /* hero */
   .hero{position:relative;padding:clamp(120px,16vh,170px) 0 clamp(50px,7vw,90px);background:linear-gradient(180deg,var(--mint) 0%,#fff 100%);overflow:hidden}
   .hero::before{content:"";position:absolute;right:-180px;top:-180px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,var(--mint2),transparent 70%)}
-  .hgrid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,64px);align-items:center}
+  .hgrid{position:relative;display:grid;grid-template-columns:minmax(0,760px);justify-content:center;text-align:center}
   .badge{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;padding:8px 16px;border-radius:999px;background:#fff;color:var(--tyrkys);box-shadow:0 8px 24px -12px rgba(104,118,59,.35);margin-bottom:20px}
   .badge::before{content:"";width:8px;height:8px;border-radius:50%;background:#2fa36b;animation:pulz 1.8s infinite}
   @keyframes pulz{0%,100%{box-shadow:0 0 0 0 rgba(47,163,107,.45)}50%{box-shadow:0 0 0 6px rgba(47,163,107,0)}}
   .hero h1 em{font-style:normal;color:var(--tyrkys)}
   .hero .lead{margin:18px 0 28px}
-  .hcta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hcta{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:center}
   .hnote{font-size:.84rem;color:var(--sed)}
   .hfoto{position:relative}
   .hfoto .ram{border-radius:26px;overflow:hidden;aspect-ratio:4/4.6;box-shadow:0 36px 70px -34px rgba(104,118,59,.45)}
@@ -172,7 +158,6 @@
   .tab .radek{display:flex;justify-content:space-between;align-items:center;padding:15px 22px;border-bottom:1px solid var(--linka);font-size:.95rem}
   .tab .radek:last-child{border-bottom:0}
   .tab .radek b{font-family:var(--disp);font-weight:600}
-  .tab .radek.ted{background:var(--mint)}
   .tab .zav{color:var(--sed)}
   .akut{background:#fff;border-radius:var(--r);padding:26px;border:1.5px solid var(--pisek);box-shadow:0 16px 40px -28px rgba(217,160,83,.4)}
   .akut h3{display:flex;align-items:center;gap:10px}
@@ -233,21 +218,14 @@
   <div class="wrap hgrid">
     <div>
       <span class="badge">Přijímáme nové pacienty</span>
-      <p class="eyebrow">Lipovec · Moravský kras</p>
+      <p class="eyebrow" style="justify-content:center">Lipovec · Moravský kras</p>
       <h1>Zubní péče pro celou rodinu, <em class="tah">kousek od vás<svg viewBox="0 0 320 14" preserveAspectRatio="none" aria-hidden="true"><path d="M4 10 C 80 2, 240 2, 316 8"/></svg></em></h1>
-      <p class="lead">Nová moderní ordinace přímo v Lipovci. Komplexní stomatologická péče s důrazem na prevenci — protože nejlepší je ošetření, které nikdy nebude potřeba.</p>
+      <p class="lead" style="margin-inline:auto">Nová moderní ordinace přímo v Lipovci. Komplexní stomatologická péče s důrazem na prevenci — protože nejlepší je ošetření, které nikdy nebude potřeba.</p>
       <div class="hcta">
         <a href="#objednani" class="btn sand">Objednat vstupní vyšetření</a>
-        <a href="#sluzby" class="btn ghost">Co ošetřujeme</a>
+        <a href="#sluzby" class="btn ghost">Naše služby</a>
       </div>
     </div>
-    <div class="hkomp">
-      <div class="okno-mini" aria-hidden="true">
-        <div class="om-h"><div class="ik">🗓️</div><div><b>Vstupní vyšetření</b><span>30 minut · Lipovec 282</span></div></div>
-        <div class="om-dny"><i class="on">Po</i><i>Út</i><i>Čt</i></div>
-        <div class="om-sloty"><i>8:00</i><i>8:30</i><i class="on">9:00</i><i>9:30</i><i>10:00</i><i>10:30</i></div>
-        <div class="om-pot">✅ <b>Pondělí 9:00</b> — rezervace potvrzena</div>
-      </div>
     </div>
   </div>
 </section>
@@ -419,9 +397,6 @@
     den=d.dataset.d;pot.classList.remove('on');vykresli();
   }));
   vykresli();
-  /* zvýraznění dnešního dne v hodinách */
-  const dnes=new Date().getDay();
-  document.querySelectorAll('#tabhod .radek').forEach(r=>{if(+r.dataset.den===dnes)r.classList.add('ted')});
 </script>
 <img src="https://strankyprovas.cz/track/d.php?s=zubni-lipovec" alt="" width="1" height="1" style="position:absolute;opacity:0" aria-hidden="true">
 </body>
