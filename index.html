@@ -42,7 +42,7 @@
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
   .reveal.in{opacity:1;transform:none}
 
-  /* ───── šmrnc: plovoucí tvary, ticker, podtržení ───── */
+  /* ───── šmrnc: tvary a podtržení ───── */
   .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;pointer-events:none;animation:plav 14s ease-in-out infinite alternate}
   .blob.b1{width:420px;height:420px;background:#dbe2b9;left:-140px;top:10%}
   .blob.b2{width:340px;height:340px;background:#f3ddb9;right:-110px;bottom:-60px;animation-delay:-7s}
@@ -52,10 +52,6 @@
   .tah svg{position:absolute;left:0;bottom:-6px;width:100%;height:14px;overflow:visible}
   .tah path{fill:none;stroke:var(--pisek);stroke-width:5;stroke-linecap:round;stroke-dasharray:320;stroke-dashoffset:320;animation:tahni 1s var(--ease) .7s forwards}
   @keyframes tahni{to{stroke-dashoffset:0}}
-  .ticker{background:var(--ink);color:#dff0ea;padding:14px 0;overflow:hidden}
-  .ticker-track{display:flex;width:max-content;animation:tick 30s linear infinite}
-  .ticker span{display:flex;align-items:center;gap:22px;padding-right:22px;font-family:var(--disp);font-weight:500;font-size:.95rem;white-space:nowrap}
-  .ticker i{font-style:normal;color:var(--pisek)}
   @keyframes tick{to{transform:translateX(-50%)}}
   /* hero kompozice bez fotky */
   .hkomp{position:relative;min-height:440px}
