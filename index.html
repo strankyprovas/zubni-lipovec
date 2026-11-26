@@ -288,8 +288,8 @@
   <div class="wrap">
     <div class="shead reveal" style="text-align:center;max-width:640px;margin:0 auto clamp(36px,5vw,56px)">
       <p class="eyebrow" style="justify-content:center">Objednání</p>
-      <h2>Objednávání spustíme před otevřením</h2>
-      <p class="lead">Ordinace zahájí provoz 1. 2. 2027. Už teď se ale můžete podívat, jak jednoduše si pak termín vyberete — přímo tady na webu, bez telefonování a čekání.</p>
+      <h2>Objednejte se online už teď</h2>
+      <p class="lead">Ordinace zahájí provoz 1. 2. 2027 — termín vstupního vyšetření si ale můžete rezervovat už dnes. Vyberete si den i čas online, bez telefonování a čekání; první volné termíny jsou od 1. února.</p>
     </div>
     <div class="ogrid">
       <div class="okarta reveal">
@@ -299,15 +299,10 @@
         <p style="color:rgba(255,255,255,.8);margin-top:12px">Seznámíme se, kompletně vyšetříme chrup, zhodnotíme snímky a domluvíme plán péče šitý na míru. Ideální první krok — pro vás i celou rodinu.</p>
         <p class="pozn">Navazující ošetření už s vámi plánujeme individuálně přímo v ordinaci.</p>
       </div>
-      <div class="sloty reveal">
-        <div class="dny" id="dny">
-          <button class="den on" data-d="Pondělí">Pondělí</button>
-          <button class="den" data-d="Úterý">Úterý</button>
-          <button class="den" data-d="Čtvrtek">Čtvrtek</button>
-        </div>
-        <div class="casy" id="casy"></div>
-        <div class="pot" id="pot"></div>
-        <p class="demo-pozn">Náhled budoucího objednání — zatím se objednat nelze. Rezervace spustíme před zahájením provozu 1. 2. 2027.</p>
+      <div class="sloty reveal" style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:14px">
+        <p style="font-size:.95rem"><b>Jak to funguje?</b> Kliknete, vyberete den a čas (pondělí, úterý nebo čtvrtek), vyplníte jméno a kontakt — a my vám rezervaci potvrdíme e-mailem.</p>
+        <a class="btn" href="https://zubni-ordinace-lipovec.reservio.com" target="_blank" rel="noopener" style="font-size:1.05rem;padding:16px 34px">📅 Rezervovat termín online</a>
+        <p class="demo-pozn" style="margin-top:0">Rezervujeme vstupní vyšetření (30 minut). Nevyhovuje vám žádný termín? Zavolejte nám na <a href="tel:+420731206182" style="color:inherit"><b>731 206 182</b></a>.</p>
       </div>
     </div>
   </div>
@@ -377,28 +372,6 @@
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   setInterval(()=>{document.querySelectorAll('.reveal:not(.in)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<innerHeight*1.05&&r.bottom>-40)el.classList.add('in')})},900);
-  /* mock rezervace */
-  const CASY=['8:00','8:30','9:00','9:30','10:00','10:30','11:00','12:00','12:30','13:00','13:30','14:00','14:30'];
-  const casy=document.getElementById('casy'),pot=document.getElementById('pot');
-  let den='Pondělí';
-  function vykresli(){
-    casy.innerHTML='';
-    CASY.forEach((c,i)=>{
-      const b=document.createElement('button');b.className='cas';b.textContent=c;
-      if((den==='Úterý'&&(i===2||i===7))||(den==='Čtvrtek'&&i===4)||(den==='Pondělí'&&i===10)){b.style.opacity='.35';b.style.pointerEvents='none'}
-      b.addEventListener('click',()=>{
-        casy.querySelectorAll('.cas').forEach(x=>x.classList.remove('on'));b.classList.add('on');
-        pot.classList.add('on');
-        pot.innerHTML=`Takhle jednoduše si vyberete termín (${den} ${c}) — objednávání ale spustíme až před otevřením ordinace 1. 2. 2027.`;
-      });
-      casy.appendChild(b);
-    });
-  }
-  document.querySelectorAll('.den').forEach(d=>d.addEventListener('click',()=>{
-    document.querySelectorAll('.den').forEach(x=>x.classList.remove('on'));d.classList.add('on');
-    den=d.dataset.d;pot.classList.remove('on');vykresli();
-  }));
-  vykresli();
 </script>
 <img src="https://strankyprovas.cz/track/d.php?s=zubni-lipovec" alt="" width="1" height="1" style="position:absolute;opacity:0" aria-hidden="true">
 </body>
